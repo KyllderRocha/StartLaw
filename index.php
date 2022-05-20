@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Processos</title>
 </head>
-    <body>
+    <body class='bg-[#96D5F3]'>
         
     <?php
         include('./src/views/indexProcessos.php')
