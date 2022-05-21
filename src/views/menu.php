@@ -5,9 +5,9 @@
         <img src="https://advocaciatrento.adv.br/wp-content/uploads/2020/12/LOGO.png" alt="" width="40" height="40">
     </div>
         <ul class="grow flex space-x-6">
-            <li>Processos</li>
-            <li>Clientes</li>
-            <li>Usúarios</li>
+            <li><a href="/StartLaw/web/">Processos</a></li>
+            <li><a href="/StartLaw/web/src/views/indexCliente.php">Clientes</a></li>
+            <li><a href="/StartLaw/web/src/views/indexUsuario.php">Usúarios</a></li>
         </ul>
     <div class="User">
         <img src="https://e7.pngegg.com/pngimages/304/275/png-clipart-user-profile-computer-icons-profile-miscellaneous-logo-thumbnail.png" alt="" width="40" height="40">
