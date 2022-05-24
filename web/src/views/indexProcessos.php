@@ -2,7 +2,6 @@
     
 <?php
     include('menu.php')
-    // include('./src/scripts/processo.js')
 ?>
 
 <script src="./src/scripts/processo.js"></script>
@@ -13,7 +12,7 @@
         <form class="grid grid-cols-4 gap-x-5 gap-y-3" action="#" method="POST">
             <div class="flex items-center">
                 <label for="codigo" class="sr-only">Código</label>
-                <input id="codigo" name="codigo" type="email" autocomplete="codigo" 
+                <input id="codigo" name="codigo" type="text" autocomplete="codigo" 
                 class="grow appearance-none relative block px-3 py-2 border border-gray-300 placeholder-gray-500
                     text-gray-900 rounded-lg focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" 
                     placeholder="Código">
