@@ -74,10 +74,10 @@
         </form>
     </div>
     
-    <div class="bg-[#FFFFFF] mx-16 relative rounded-2xl px-14 py-4 h-fit min-h-[80%]">
+    <div class="bg-[#FFFFFF] mx-16  mb-10 relative rounded-2xl px-14 py-4 h-fit min-h-[80%]">
         <div class="flex justify-between p-4 border-solid border-0 border-b-2 border-[rgba(113 113 122 0.6)] mb-5 items-center	">
             <span class="text-2xl italic">Lista de Processos</span>
-            <a href="#">Adicionar Processo</a>
+            <a href="/StartLaw/web/src/views/processo.php">Adicionar Processo</a>
         </div>
         <table class="display w-full h-fit min-h-[90%]  relative" id = "TableProcesso">
             <thead>

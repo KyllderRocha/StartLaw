@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Processos</title>
+    <title>Usuarios</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.0/css/jquery.dataTables.css">
@@ -64,10 +64,10 @@
                 </form>
             </div>
             
-            <div class="bg-[#FFFFFF] mx-16 relative rounded-2xl px-14 py-4 h-fit min-h-[80%]">
+            <div class="bg-[#FFFFFF] mx-16  mb-10 relative rounded-2xl px-14 py-4 h-fit min-h-[80%]">
                 <div class="flex justify-between p-4 border-solid border-0 border-b-2 border-[rgba(113 113 122 0.6)] mb-5 items-center	">
                     <span class="text-2xl italic">Lista de Usuarios</span>
-                    <a href="#">Adicionar Usuario</a>
+                    <a href="/StartLaw/web/src/views/usuario.php">Adicionar Usuario</a>
                 </div>
                 <table class="display w-full h-fit min-h-[90%]  relative" id = "TableUsuario">
                     <thead>

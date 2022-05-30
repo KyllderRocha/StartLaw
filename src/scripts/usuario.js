@@ -7,4 +7,6 @@ $(document).ready( function () {
         paging: true,
         "searching": false
     });
+
+    
 } );
