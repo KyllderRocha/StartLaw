@@ -13,7 +13,6 @@
     <body class='bg-[#c6e6f5] min-h-screen h-fit text-zinc-700'>
         <?php
             include('menu.php')
-            // include('./src/scripts/processo.js')
         ?>
             <!-- Processo Index -->
         <div class="w-screen relative flex flex-col h-[94.1%]">
@@ -22,14 +21,14 @@
                 <form class="grid grid-cols-4 gap-x-5 gap-y-3" action="#" method="POST">
                     <div class="flex items-center">
                         <label for="Nome" class="sr-only">Nome</label>
-                        <input id="Nome" name="Nome" type="email" autocomplete="Nome" 
+                        <input id="Nome" name="Nome" type="text" autocomplete="Nome" 
                         class="grow appearance-none relative block px-3 py-2 border border-gray-300 placeholder-gray-500
                             text-gray-900 rounded-lg focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" 
                             placeholder="Nome">
                     </div>
                     <div class="flex items-center">
                         <label for="Email" class="sr-only">Email</label>
-                        <input id="Email" name="Email" type="text" autocomplete="Email" 
+                        <input id="Email" name="Email" type="email" autocomplete="Email" 
                         class="grow appearance-none relative block px-3 py-2 border border-gray-300 placeholder-gray-500
                             text-gray-900 rounded-lg focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" 
                             placeholder="Email">
