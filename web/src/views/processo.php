@@ -97,7 +97,7 @@
                         </p>
                     </label>
 
-                    <div class="my-5 flex-1 flex justify-end">
+                    <div class="mt-10 mb-0 py-6 flex-1 flex justify-end border-solid border-0 border-t -2 border-[rgba(113 113 122 0.9)]">
                         <button id="upload" type="button" class="bg-[#C1E8FA] appearance-none relative block px-10 py-2 border border-gray-300 placeholder-gray-500
                             text-gray-900 rounded-full focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm hidden" 
                             >Upload</button>

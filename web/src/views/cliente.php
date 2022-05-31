@@ -167,7 +167,7 @@
                         </label>
                     </div>
                     
-                    <div class="my-5 flex-1 flex justify-end">
+                    <div class="mt-5 mb-0 py-6 flex-1 flex justify-end border-solid border-0 border-t -2 border-[rgba(113 113 122 0.9)]">
                         <button id="upload" type="button" class="bg-[#C1E8FA] appearance-none relative block px-10 py-2 border border-gray-300 placeholder-gray-500
                             text-gray-900 rounded-full focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm hidden" 
                             >Upload</button>
@@ -180,5 +180,41 @@
             </div>
         </div>
 
+        <div class="bg-[#FFFFFF] mx-16 mb-10 relative rounded-2xl px-14 py-4 h-fit min-h-[80%]">
+                <div class="flex justify-start p-4 border-solid border-0 border-b-2 border-[rgba(113 113 122 0.6)] mb-5 items-center	">
+                    <span class="text-2xl italic">Lista de Processos</span>
+                </div>
+                <table class="display w-full h-fit min-h-[90%] relative" id = "TableProcessosClientes">
+                    <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th>Processo</th>
+                            <th>Cliente</th>
+                            <th>Tipo de processo</th>
+                            <th>Fase</th>
+                            <th>Prazo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Código</td>
+                            <td>Processo</td>
+                            <td>Cliente</td>
+                            <td>Tipo de processo</td>
+                            <td>Fase</td>
+                            <td>Prazo</td>
+                        </tr>
+                        <tr>
+                            <td>Código</td>
+                            <td>Processo</td>
+                            <td>Cliente</td>
+                            <td>Tipo de processo</td>
+                            <td>Fase</td>
+                            <td>Prazo</td>
+                        </tr>
+                    </tbody>
+                </table>    
+            </div>
+        </div>
     </body>
 </html>
