@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Processos</title>
+    <title>Login</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.0/css/jquery.dataTables.css">
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.0/js/jquery.dataTables.js"></script>
-
+    <script src="./src/scripts/login.js"></script>
 </head>
     <body class='bg-[#FFFFFF] min-h-screen h-fit text-zinc-700 flex'>
         
@@ -35,9 +35,10 @@
                     placeholder="Senha">
             </div>
             <div class="w-[60%] flex items-center">
-                <button class="grow bg-[#C1E8FA] appearance-none relative block px-3 py-2 border border-gray-300 placeholder-gray-500
-                    text-gray-900 rounded-full focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-lg" 
-                    >Buscar</button>
+                <button  class="grow bg-[#C1E8FA] appearance-none relative block px-3 py-2 border border-gray-300 placeholder-gray-500
+                    text-gray-900 rounded-full focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-lg"
+                    id="BtnEntrar" type="button"
+                    >Entrar</button>
             </div>  
         </form>
 

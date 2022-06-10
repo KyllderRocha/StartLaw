@@ -5,7 +5,7 @@
         <img src="https://advocaciatrento.adv.br/wp-content/uploads/2020/12/LOGO.png" alt="" width="40" height="40">
     </div>
         <ul class="grow flex space-x-6">
-            <li><a href="/StartLaw/web/">Processos</a></li>
+            <li><a href="/StartLaw/web/src/views/indexProcessos.php">Processos</a></li>
             <li><a href="/StartLaw/web/src/views/indexCliente.php">Clientes</a></li>
             <li><a href="/StartLaw/web/src/views/indexUsuario.php">Usúarios</a></li>
         </ul>
