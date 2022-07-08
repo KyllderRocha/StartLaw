@@ -9,6 +9,13 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.0/css/jquery.dataTables.css">
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.0/js/jquery.dataTables.js"></script>
     <script src="./../scripts/processo.js"></script>
+    <script src="./../scripts/index.js"></script>
+    
+    <script>
+        $(document).ready( function () {
+            atualizarTabelaProcesso();
+        } );
+    </script>
 
 </head>
     
@@ -20,24 +27,24 @@
         <div class="w-screen relative flex flex-col h-[94.1%]">
             <!--Filtro -->
             <div class="bg-[#FFFFFF] mx-16 my-6 relative rounded-2xl px-14 py-5">
-                <form class="grid grid-cols-4 gap-x-5 gap-y-3" action="#" method="POST">
+                <form class="grid grid-cols-4 gap-x-5 gap-y-3" action="#" method="POST" id="buscaProcessoForm">
                     <div class="flex items-center">
                         <label for="codigo" class="sr-only">Código</label>
-                        <input id="codigo" name="codigo" type="text" autocomplete="codigo" 
+                        <input id="codigo" name="id" type="text" autocomplete="codigo" 
                         class="grow appearance-none relative block px-3 py-2 border border-gray-300 placeholder-gray-500
                             text-gray-900 rounded-lg focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" 
                             placeholder="Código">
                     </div>
                     <div class="flex items-center">
                         <label for="processo" class="sr-only">Processo</label>
-                        <input id="processo" name="processo" type="text" autocomplete="processo" 
+                        <input id="processo" name="nome" type="text" autocomplete="processo" 
                         class="grow appearance-none relative block px-3 py-2 border border-gray-300 placeholder-gray-500
                             text-gray-900 rounded-lg focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" 
                             placeholder="Processo">
                     </div>
                     <div class="flex items-center">
                         <label for="tipoProcesso" class="sr-only">Selecione o tipo do processo</label>
-                        <select id="tipoProcesso" name="tipoProcesso" autocomplete="tipoProcesso" 
+                        <select id="tipoProcessoID" name="tipoProcessoID" autocomplete="tipoProcesso" 
                         class="grow appearance-none relative block px-3 py-2 border border-gray-300 placeholder-gray-500
                             text-gray-900 rounded-lg focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" 
                             placeholder="Selecione o tipo do processo">
@@ -45,29 +52,33 @@
                         </select>
                     </div>
                     <div class="flex items-center">
-                        <label for="fase" class="sr-only">Fase</label>
-                        <input id="fase" name="fase" type="text" autocomplete="fase" 
+                        <label for="status" class="sr-only">Status</label>
+                        <select id="statusID" name="statusID" type="text" autocomplete="status" 
                         class="grow appearance-none relative block px-3 py-2 border border-gray-300 placeholder-gray-500
                             text-gray-900 rounded-lg focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" 
-                            placeholder="Fase">
+                            placeholder="Status">
+                            <option value="">Selecione o Status</option>
+                        </select>
                     </div>
                     <div class="flex items-center">
                         <label for="cliente" class="sr-only">Selecione Cliente</label>
-                        <input id="cliente" name="cliente" autocomplete="cliente" 
+                        <select id="clienteID" name="clienteID" autocomplete="cliente" 
                         class="grow appearance-none relative block px-3 py-2 border border-gray-300 placeholder-gray-500
                             text-gray-900 rounded-lg focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" 
                             placeholder="Selecione Cliente">
+                            <option value="">Selecione o Cliente</option>
+                        </select>
                     </div>
                     <div class="flex items-center">
                         <label for="dataInicio" class="sr-only">Data de Início</label>
-                        <input id="dataInicio" name="dataInicio" type="date" autocomplete="dataInicio" 
+                        <input id="dataInicio" name="prazoInicial" type="date" autocomplete="dataInicio" 
                         class="grow appearance-none relative block px-3 py-2 border border-gray-300 placeholder-gray-500
                             text-gray-900 rounded-lg focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" 
                             placeholder="dataInicio">
                     </div>
                     <div class="flex items-center">
                         <label for="dataFim" class="sr-only">Data Final</label>
-                        <input id="dataFim" name="dataFim" type="date" autocomplete="dataFim" 
+                        <input id="dataFim" name="prazoFinal" type="date" autocomplete="dataFim" 
                         class="grow appearance-none relative block px-3 py-2 border border-gray-300 placeholder-gray-500
                             text-gray-900 rounded-lg focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" 
                             placeholder="Data Final">
@@ -77,7 +88,7 @@
                         class="grow appearance-none relative block px-3 py-2 border border-gray-300 placeholder-gray-500
                             text-gray-900 rounded-lg focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" 
                             placeholder="Email"> -->
-                        <button class="grow bg-[#C1E8FA] appearance-none relative block px-3 py-2 border border-gray-300 placeholder-gray-500
+                        <button id="BtnBuscarProcesso" class="grow bg-[#C1E8FA] appearance-none relative block px-3 py-2 border border-gray-300 placeholder-gray-500
                             text-gray-900 rounded-full focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" 
                             >Buscar</button>
                     </div>  
@@ -96,164 +107,12 @@
                             <th>Processo</th>
                             <th>Cliente</th>
                             <th>Tipo de processo</th>
-                            <th>Fase</th>
+                            <th>Status</th>
                             <th>Prazo</th>
+                            <th>Criação</th>
+                            <th>Ações</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>Código</td>
-                            <td>Processo</td>
-                            <td>Cliente</td>
-                            <td>Tipo de processo</td>
-                            <td>Fase</td>
-                            <td>Prazo</td>
-                        </tr>
-                        <tr>
-                            <td>Código</td>
-                            <td>Processo</td>
-                            <td>Cliente</td>
-                            <td>Tipo de processo</td>
-                            <td>Fase</td>
-                            <td>Prazo</td>
-                        </tr>
-                        <tr>
-                            <td>Código</td>
-                            <td>Processo</td>
-                            <td>Cliente</td>
-                            <td>Tipo de processo</td>
-                            <td>Fase</td>
-                            <td>Prazo</td>
-                        </tr>
-                        <tr>
-                            <td>Código</td>
-                            <td>Processo</td>
-                            <td>Cliente</td>
-                            <td>Tipo de processo</td>
-                            <td>Fase</td>
-                            <td>Prazo</td>
-                        </tr>
-                        <tr>
-                            <td>Código</td>
-                            <td>Processo</td>
-                            <td>Cliente</td>
-                            <td>Tipo de processo</td>
-                            <td>Fase</td>
-                            <td>Prazo</td>
-                        </tr>
-                        <tr>
-                            <td>Código</td>
-                            <td>Processo</td>
-                            <td>Cliente</td>
-                            <td>Tipo de processo</td>
-                            <td>Fase</td>
-                            <td>Prazo</td>
-                        </tr>
-                        <tr>
-                            <td>Código</td>
-                            <td>Processo</td>
-                            <td>Cliente</td>
-                            <td>Tipo de processo</td>
-                            <td>Fase</td>
-                            <td>Prazo</td>
-                        </tr>
-                        <tr>
-                            <td>Código</td>
-                            <td>Processo</td>
-                            <td>Cliente</td>
-                            <td>Tipo de processo</td>
-                            <td>Fase</td>
-                            <td>Prazo</td>
-                        </tr>
-                        <tr>
-                            <td>Código</td>
-                            <td>Processo</td>
-                            <td>Cliente</td>
-                            <td>Tipo de processo</td>
-                            <td>Fase</td>
-                            <td>Prazo</td>
-                        </tr>
-                        <tr>
-                            <td>Código</td>
-                            <td>Processo</td>
-                            <td>Cliente</td>
-                            <td>Tipo de processo</td>
-                            <td>Fase</td>
-                            <td>Prazo</td>
-                        </tr>
-                        <tr>
-                            <td>Código</td>
-                            <td>Processo</td>
-                            <td>Cliente</td>
-                            <td>Tipo de processo</td>
-                            <td>Fase</td>
-                            <td>Prazo</td>
-                        </tr>
-                        <tr>
-                            <td>Código</td>
-                            <td>Processo</td>
-                            <td>Cliente</td>
-                            <td>Tipo de processo</td>
-                            <td>Fase</td>
-                            <td>Prazo</td>
-                        </tr>
-                        <tr>
-                            <td>Código</td>
-                            <td>Processo</td>
-                            <td>Cliente</td>
-                            <td>Tipo de processo</td>
-                            <td>Fase</td>
-                            <td>Prazo</td>
-                        </tr>
-                        <tr>
-                            <td>Código</td>
-                            <td>Processo</td>
-                            <td>Cliente</td>
-                            <td>Tipo de processo</td>
-                            <td>Fase</td>
-                            <td>Prazo</td>
-                        </tr>
-                        <tr>
-                            <td>Código</td>
-                            <td>Processo</td>
-                            <td>Cliente</td>
-                            <td>Tipo de processo</td>
-                            <td>Fase</td>
-                            <td>Prazo</td>
-                        </tr>
-                        <tr>
-                            <td>Código</td>
-                            <td>Processo</td>
-                            <td>Cliente</td>
-                            <td>Tipo de processo</td>
-                            <td>Fase</td>
-                            <td>Prazo</td>
-                        </tr>
-                        <tr>
-                            <td>Código</td>
-                            <td>Processo</td>
-                            <td>Cliente</td>
-                            <td>Tipo de processo</td>
-                            <td>Fase</td>
-                            <td>Prazo</td>
-                        </tr>
-                        <tr>
-                            <td>Código</td>
-                            <td>Processo</td>
-                            <td>Cliente</td>
-                            <td>Tipo de processo</td>
-                            <td>Fase</td>
-                            <td>Prazo</td>
-                        </tr>
-                        <tr>
-                            <td>Código</td>
-                            <td>Processo</td>
-                            <td>Cliente</td>
-                            <td>Tipo de processo</td>
-                            <td>Fase</td>
-                            <td>Prazo</td>
-                        </tr>
-                    </tbody>
                 </table>    
             </div>
         </div>
